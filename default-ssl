@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+	ServerName	104.131.130.15
+#	SeverAlias	www.example.com
+	DocumentRoot	/var/www/html
+</VirtualHost>
+
+<VirtualHost *:80>
+        ServerName      104.131.130.15
+#        SeverAlias      www.example.com
+        Redirect permanent / https://104.131.130.15/
+</VirtualHost>
+
+<VirtualHost *:443>
+        ServerName      104.131.130.15
+#        SeverAlias      www.example.com
+        DocumentRoot	/var/www/html
+	SSLEngine	on
+	SSLCertificateFile	/etc/ssl/apache.crt
+	SSLCertificateKeyFile	/etc/ssl/apache.key
+</VirtualHost>
+
+
